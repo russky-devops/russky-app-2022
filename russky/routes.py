@@ -6,7 +6,7 @@ from fastapi.responses import HTMLResponse
 from multiavatar.multiavatar import multiavatar
 from starlette.responses import Response
 from starlette.templating import _TemplateResponse
-    ololo
+
 from russky.app import app
 from russky.di import DI
 from russky.models import RecommendationResponse
@@ -24,7 +24,7 @@ async def random(request: Request) -> _TemplateResponse:
     )
 
 
-@app.get(/recommend/{recommendation_type}', response_class=HTMLResponse)
+@app.get('/recommend/{recommendation_type}', response_class=HTMLResponse)
 async def random_by_type(request: Request, recommendation_type: str) -> _TemplateResponse:
     logger.info(f'get random recommendation for {recommendation_type}')
     return DI.templates.TemplateResponse(
